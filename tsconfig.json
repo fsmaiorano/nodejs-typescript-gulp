@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "esnext"
+        ],
+        "target": "es6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "removeComments": false,
+        // "watch": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+    },
+    "compileOnSave": false,
+    "include": [
+        "src/**/*.ts",
+    ],
+    "exclude": [
+        "node_modules",
+    ]
+}
