@@ -8,7 +8,8 @@ class GithubController {
   }
 
   async getUser(req: Request, res: Response, next: NextFunction) {
-    const response = await githubServices.getUser(req.body);
+    const response = await githubServices.getUser(req.body.username);
+    res.send(response.data);
   }
 
 }

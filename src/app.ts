@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 
-import GithubRoutes from './api/routes/github/github.routes';
+import { GithubRouter } from './api/routes/github/github.routes';
 
 class App {
 
@@ -27,7 +27,7 @@ class App {
             });
         });
         this.express.use('/', router);
-        this.express.use('/api/github', GithubRoutes.router);
+        this.express.use('/api/github', new GithubRouter().router);
     }
 
 }

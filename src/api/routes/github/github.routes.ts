@@ -11,18 +11,14 @@ export class GithubRouter {
     }
 
     private getUser(req: Request, res: Response, next: NextFunction) {
-        // res.send("github getAll");
         GithubController.getUser(req, res, next);
     }
 
 
     init() {
-        this.router.get('/getUser', this.getUser);
+        this.router.post('/getUser', this.getUser);
     }
 
 }
 
-const routes = new GithubRouter();
-routes.init();
-
-export default routes;
+export default new GithubRouter();

@@ -2,21 +2,22 @@ import Axios from 'axios';
 
 class GithubServices {
 
-    private axios = Axios;
-
     constructor() {
-        this.init();
+        this.getBaseUrl();
     }
 
-    private init() {
-        return this.axios.create({
+    private getBaseUrl() {
+        const api = Axios.create({
             baseURL: 'https://api.github.com',
         });
+
+        return api;
     }
 
-    public async getUser(username) {
-        const response = await this.axios.get(`/users/${username}`);
-        return response.data;
+    async getUser(username: string): Promise<any> {
+        let api = this.getBaseUrl();
+        const response = await api.get(`/users/${username}`).catch(error => console.log(error));
+        return response;
     }
 
 }
