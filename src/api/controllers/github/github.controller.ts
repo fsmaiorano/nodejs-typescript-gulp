@@ -1,4 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express';
+import githubServices from './../../services/github/v1/github.services';
 
 class GithubController {
 
@@ -7,38 +8,9 @@ class GithubController {
   }
 
   async getUser(req: Request, res: Response, next: NextFunction) {
-    let x = 1;
-    // try {
-    //   const isValid = this.validate(app, req, res);
-    //   const response = await this.handleVersion(app, req);
-    //   res.send(response);
-    // } catch (err) {
-    //   res.send(err.message);
-    // };
+    const response = await githubServices.getUser(req.body);
   }
 
-  // async handleVersion(app, req) {
-  //   let apiVersion = req.headers.accept;
-  //   switch (apiVersion) {
-  //     case "1.0":
-  //       return await app.services.githubServices.v1.github.getUser(req.body.username)
-  //       break;
-  //     default:
-  //       return await app.services.githubServices.v1.github.getUser(req.body.username)
-  //       break;
-  //   }
-  // }
-
-  // validate(app, req, res) {
-  //   req.assert("username", "Error: Param 'username' is missing.").notEmpty();
-
-  //   const errors = req.validationErrors();
-
-  //   if (errors)
-  //     res.send(errors);
-
-  //   return true;
-  // }
 }
 
 export default new GithubController();
