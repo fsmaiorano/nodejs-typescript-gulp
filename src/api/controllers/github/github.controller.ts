@@ -1,5 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import githubServices from './../../services/github/v1/github.services';
+import Handler from './../../services/github/github.handler';
 
 class GithubController {
 
@@ -8,7 +8,9 @@ class GithubController {
   }
 
   async getUser(req: Request, res: Response, next: NextFunction) {
-    const response = await githubServices.getUser(req.body.username);
+    const version = req.headers.via;
+    const service = Handler.versionHandler(version);
+    const response = await service.getUser(req.body.username);
     res.send(response.data);
   }
 
