@@ -1,8 +1,11 @@
+
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 
+//Routers
 import { GithubRouter } from './api/routes/github/github.routes';
+import { UserRouter } from './api/routes/user/user.routes';
 
 class App {
 
@@ -26,8 +29,11 @@ class App {
                 message: 'Hello World!'
             });
         });
+        
         this.express.use('/', router);
+
         this.express.use('/api/github', new GithubRouter().router);
+        this.express.use('/api/user', new UserRouter().router);
     }
 
 }

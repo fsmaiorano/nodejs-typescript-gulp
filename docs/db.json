@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "user 1",
+            "email": "user_1@email.com",
+            "url_avatar": "http://avataruser1.mock.com"
+        },
+        {
+            "id": 2,
+            "name": "user 2",
+            "email": "user_2@email.com",
+            "url_avatar": "http://avataruser2.mock.com"
+        },
+        {
+            "id": 3,
+            "name": "user 3",
+            "email": "user_3@email.com",
+            "url_avatar": "http://avataruser3.mock.com"
+        },
+        {
+            "id": 4,
+            "name": "user 4",
+            "email": "user_4@email.com",
+            "url_avatar": "http://avataruser4.mock.com"
+        }
+    ]
+}

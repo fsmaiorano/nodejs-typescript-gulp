@@ -1,10 +1,88 @@
 {
 	"info": {
-		"_postman_id": "7ea40fef-c401-41e1-9db5-cef1949e356f",
 		"name": "NodeJS-Skeleton",
+		"_postman_id": "4bc1b540-080b-7376-46b8-1185b68b9f47",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "http://localhost:3000/api/user/getuser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Via",
+						"value": "1.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"fsmaiorano\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/getUser?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"getUser"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": "Get username details from github"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/user/getusers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Via",
+						"value": "1.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"fsmaiorano\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/getUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"getUsers"
+					]
+				},
+				"description": "Get username details from github"
+			},
+			"response": []
+		},
 		{
 			"name": "http://localhost:3000/api/github/getuser",
 			"request": {
@@ -15,7 +93,7 @@
 						"value": "application/json"
 					},
 					{
-						"key": "Accept",
+						"key": "Via",
 						"value": "1.0"
 					}
 				],
