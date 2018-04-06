@@ -7,6 +7,9 @@ import * as bodyParser from 'body-parser';
 import { GithubRouter } from './api/routes/github/github.routes';
 import { UserRouter } from './api/routes/user/user.routes';
 
+//MongoDb
+import database from './database/database';
+
 class App {
 
     public express: express.Application;
@@ -15,6 +18,7 @@ class App {
         this.express = express();
         this.middleware();
         this.routes();
+        this.database();
     }
 
     private middleware(): void {
@@ -29,11 +33,15 @@ class App {
                 message: 'Hello World!'
             });
         });
-        
+
         this.express.use('/', router);
 
         this.express.use('/api/github', new GithubRouter().router);
         this.express.use('/api/user', new UserRouter().router);
+    }
+
+    private database(): void {
+        database.initDatabase();
     }
 
 }
