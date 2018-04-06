@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import databaseConfig from './config';
+import databaseConfig from './database.config';
 
 import UserDAO from './dao/user.dao';
 
