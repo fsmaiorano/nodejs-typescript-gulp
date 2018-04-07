@@ -3,7 +3,11 @@ import databaseConfig from './database.config';
 
 import UserDAO from './dao/user.dao';
 
+//Initial State
+import FakeDb from './../utils/readFakeDb';
+
 class Database {
+
     constructor() {
         this.mock();
     }
@@ -12,8 +16,12 @@ class Database {
         mongoose.connect(`mongodb://${databaseConfig.url}:${databaseConfig.port}/${databaseConfig.name}`);
     }
 
-    mock(){
-        let x = UserDAO.save();
+    mock() {
+        FakeDb.getDb().then(initialState => {
+
+            initialState['users'].map(user => { UserDAO.save(user) });
+
+        });
     }
 }
 

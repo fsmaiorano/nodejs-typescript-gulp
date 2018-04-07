@@ -10,14 +10,14 @@ class UserDAO {
 
     }
 
-    save() {
-        let newUser = new this.userModel({ name: "teste" });
+    save(user) {
+        let newUser = new this.userModel(user);
         newUser.save().then((userResponse) => {
             if (userResponse.errors) {
                 console.log('error', userResponse.errors);
             }
             else {
-                console.log('foi');
+                console.log('save on db');
             }
         })
     }
