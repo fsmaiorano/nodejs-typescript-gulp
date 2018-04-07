@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import FakeDb from './../../../../utils/readFakeDb';
 
-import { User } from './../../../models/user/user.model';
+import { User } from './../../../../models/user/user.model';
 
 class UserServices {
 

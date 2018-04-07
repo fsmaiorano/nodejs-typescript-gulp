@@ -1,4 +1,4 @@
-import { User } from './../../models/user/user.model';
+import { User } from './../../../models/user/user.model';
 import { Router, Request, Response, NextFunction } from 'express';
 import Handler from './../../services/user/user.handler';
 

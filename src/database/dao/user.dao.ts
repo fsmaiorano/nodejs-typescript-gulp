@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import UserSchema from './../schemas/user.schema';
-import { User } from './../../api/models/user/user.model';
+import { User } from './../../models/user/user.model';
 
 class UserDAO {
 
